@@ -1,5 +1,5 @@
-import { ROUTER } from 'Libs/consts';
-import { isInteger, isNotEmptyString, isObject } from 'Libs/conditions';
+import { ROUTER } from 'LIBS/consts';
+import { isInteger, isNotEmptyString, isObject } from 'LIBS/conditions';
 
 class Router {
   /**

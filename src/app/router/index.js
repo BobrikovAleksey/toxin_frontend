@@ -1,4 +1,4 @@
-import { ROUTER } from 'Libs/consts';
+import { ROUTER } from 'LIBS/consts';
 import { Router } from './Router';
 
 const router = new Router({
