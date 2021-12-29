@@ -52,7 +52,7 @@ class Router {
   };
 
   get app() {
-    return this.#cache.root;
+    return this.#cache.app;
   };
 
   set mode(value) {

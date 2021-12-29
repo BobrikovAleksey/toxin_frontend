@@ -1,3 +1,14 @@
+import { App } from 'CLASSES/App';
 import { router } from 'APP/router';
 
-router.app = {};
+const app = new App({
+  router,
+  components: {
+
+  },
+  views: {
+
+  },
+});
+
+app.init();

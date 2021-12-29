@@ -1,5 +1,5 @@
+import { Router } from 'CLASSES/Router';
 import { ROUTER } from 'LIBS/consts';
-import { Router } from './Router';
 
 const router = new Router({
   mode: ROUTER.modeHash,

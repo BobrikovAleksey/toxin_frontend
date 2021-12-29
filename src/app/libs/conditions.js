@@ -1,15 +1,19 @@
-const isArray = (val) => (Array.isArray(val));
-const isBoolean = (val) => (typeof val === 'boolean');
-const isInteger = (val) => isNumber(val) && val >= 0;
-const isNotEmptyString = (val) => ((typeof val === 'string') && (val.length > 0));
-const isNumber = (val) => (typeof val === 'number') && !Number.isNaN(val);
-const isObject = (val) => (typeof val === 'object');
+const isArray = (list) => (Array.isArray(list));
+const isBoolean = (bool) => (typeof bool === 'boolean');
+const isFunction = (func) => (typeof func === 'function');
+const isInteger = (numb) => isNumber(numb) && numb >= 0;
+const isNotEmptyString = (str) => ((typeof str === 'string') && (str.length > 0));
+const isNumber = (numb) => (typeof numb === 'number') && !Number.isNaN(numb);
+const isObject = (obj) => (typeof obj === 'object') && (obj !== null);
+const isRouter = (router) => isObject(router) && (router.constructor.name === 'Router');
 
 export {
   isArray,
   isBoolean,
+  isFunction,
   isInteger,
   isNotEmptyString,
   isNumber,
   isObject,
+  isRouter,
 };

@@ -22,6 +22,7 @@ const SASS_LOADER = 'sass-loader';
 const SRC = path.resolve(__dirname, 'src');
 const APP = path.resolve(SRC, 'app');
 const ASSETS = path.resolve(SRC, 'assets');
+const CLASSES = path.resolve(APP, 'classes');
 const COMPONENTS = path.resolve(APP, 'components');
 const DIST = path.resolve(__dirname, 'dist');
 const FONTS = path.resolve(ASSETS, 'fonts');
@@ -48,7 +49,7 @@ module.exports = {
 
   resolve: {
     extensions: [ JS, JSX, CSS, SCSS, SASS, HTML ],
-    alias: { APP, COMPONENTS, FONTS, LIBS, STYLES, STORE, VIEWS },
+    alias: { APP, CLASSES, COMPONENTS, FONTS, LIBS, STYLES, STORE, VIEWS },
   },
 
   module: {
