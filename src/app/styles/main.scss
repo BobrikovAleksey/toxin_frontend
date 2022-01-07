@@ -1,0 +1,71 @@
+@import '~STYLES/vars', '~STYLES/mixins';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  &:active, &:focus {
+    outline: none;
+  };
+};
+
+a {
+  @include Text-Link;
+};
+
+body {
+  background: $Html-Background-Color;
+  color: $Color-DarkShade75;
+  font-family: $Html-Font-Family;
+  user-select: none;
+};
+
+body, input, p {
+  @include Text;
+};
+
+button, input {
+  font-family: $Html-Font-Family;
+  font-size: inherit;
+};
+
+button {
+  background: none;
+  border:  none;
+};
+
+h1 {
+  @include Text-H1;
+};
+
+h2 {
+  @include Text-H2;
+};
+
+h3 {
+  @include Text-H3;
+};
+
+html {
+  font-size: $Html-Font-SizePx;
+};
+
+li, ul {
+  list-style-type: none;
+};
+
+.material-icons {
+  @include Text-Font(24px, 24px);
+  direction: ltr;
+  display: inline-block;
+  font-family: 'Material Icons', serif;
+  font-feature-settings: 'liga';
+  letter-spacing: normal;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+};

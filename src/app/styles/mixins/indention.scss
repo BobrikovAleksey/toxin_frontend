@@ -1,0 +1,109 @@
+@import '~STYLES/vars';
+
+/**********************************************************************************************************************
+ *                                                    M A R G I N                                                     *
+ **********************************************************************************************************************/
+
+@mixin Margin-BottomLeft($bottom: 0, $left: 0) {
+  margin-bottom: $bottom;
+  margin-left: $left;
+};
+
+@mixin Margin-BottomRight($bottom: 0, $right: $bottom) {
+  margin-bottom: $bottom;
+  margin-right: $right;
+};
+
+@mixin Margin-LeftRight($left: 0, $right: $left) {
+  margin-left: $left;
+  margin-right: $right;
+};
+
+@mixin Margin-TopBottom($top: 0, $bottom: $top) {
+  margin-bottom: $bottom;
+  margin-top: $top;
+};
+
+@mixin Margin-TopLeft($top: 0, $left: $top) {
+  margin-left: $left;
+  margin-top: $top;
+};
+
+@mixin Margin-TopRight($top: 0, $right: $top) {
+  margin-right: $right;
+  margin-top: $top;
+};
+
+@mixin Margin-BottomLeftRight($bottom: 0, $left: $bottom, $right: $left) {
+  @include Margin-BottomLeft($bottom, $left);
+  margin-right: $right;
+};
+
+@mixin Margin-LeftTopBottom($left: 0, $top: $left, $bottom: $top) {
+  @include Margin-TopBottom($top, $bottom);
+  margin-left: $left;
+};
+
+@mixin Margin-RightTopBottom($right: 0, $top: $right, $bottom: $top) {
+  @include Margin-TopBottom($top, $bottom);
+  margin-right: $right;
+};
+
+@mixin Margin-TopLeftRight($top: 0, $left: $top, $right: $left) {
+  @include Margin-TopLeft($top, $left);
+  margin-right: $right;
+};
+
+/**********************************************************************************************************************
+ *                                                   P A D D I N G                                                    *
+ **********************************************************************************************************************/
+
+@mixin Padding-BottomLeft($bottom: 0, $left: 0) {
+  padding-bottom: $bottom;
+  padding-left: $left;
+};
+
+@mixin Padding-BottomRight($bottom: 0, $right: $bottom) {
+  padding-bottom: $bottom;
+  padding-right: $right;
+};
+
+@mixin Padding-LeftRight($left: 0, $right: $left) {
+  padding-left: $left;
+  padding-right: $right;
+};
+
+@mixin Padding-TopBottom($top: 0, $bottom: $top) {
+  padding-bottom: $bottom;
+  padding-top: $top;
+};
+
+@mixin Padding-TopLeft($top: 0, $left: $top) {
+  padding-left: $left;
+  padding-top: $top;
+};
+
+@mixin Padding-TopRight($top: 0, $right: $top) {
+  padding-right: $right;
+  padding-top: $top;
+};
+
+@mixin Padding-BottomLeftRight($bottom: 0, $left: $bottom, $right: $left) {
+  @include Padding-BottomLeft($bottom, $left);
+  padding-right: $right;
+};
+
+@mixin Padding-LeftTopBottom($left: 0, $top: $left, $bottom: $top) {
+  @include Padding-TopBottom($top, $bottom);
+  padding-left: $left;
+};
+
+@mixin Padding-RightTopBottom($right: 0, $top: $right, $bottom: $top) {
+  @include Padding-TopBottom($top, $bottom);
+  padding-right: $right;
+};
+
+@mixin Padding-TopLeftRight($top: 0, $left: $top, $right: $left) {
+  @include Padding-TopLeft($top, $left);
+  padding-right: $right;
+};

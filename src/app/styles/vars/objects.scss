@@ -1,0 +1,49 @@
+@import './palette';
+
+/**********************************************************************************************************************
+ *                                                    B O R D E R                                                     *
+ **********************************************************************************************************************/
+
+$Border-Color: $Color-DarkShade25;
+$Border-Color-Focused: $Color-DarkShade50;
+$Border-Radius-Sm: 4;
+$Border-Radius-SmPx: 4px;
+$Border-Radius-Md: 6;
+$Border-Radius-MdPx: 6px;
+$Border-Size-Sm: 1;
+$Border-Size-SmPx: 1px;
+$Border-Size-Md: 2;
+$Border-Size-MdPx: 2px;
+
+/**********************************************************************************************************************
+ *                                                     I N P U T                                                      *
+ **********************************************************************************************************************/
+
+$Input-Height-Sm: 34;
+$Input-Height-SmPx: 34px;
+$Input-Height-Md: 44;
+$Input-Height-MdPx: 44px;
+$Input-Height-Lg: 44;
+$Input-Height-LgPx: 44px;
+$Input-Width-Sm: 266;
+$Input-Width-SmPx: 266px;
+$Input-Width-Md: 280;
+$Input-Width-MdPx: 280px;
+$Input-Width-Lg: 320;
+$Input-Width-LgPx: 320px;
+
+/**********************************************************************************************************************
+ *                                                    S H A D O W                                                     *
+ **********************************************************************************************************************/
+
+$Shadow-Color: rgba(black, 0.2);
+$Shadow-Color-Lightened: $Color-DarkShade5;
+
+$Shadow: 0px 0px 25px $Shadow-Color;
+$Shadow-Lite: 0px 10px 20px $Shadow-Color-Lightened;
+
+/**********************************************************************************************************************
+ *                                                      T E X T                                                       *
+ **********************************************************************************************************************/
+
+$TextPlaceholder-Color: $Color-DarkShade25;

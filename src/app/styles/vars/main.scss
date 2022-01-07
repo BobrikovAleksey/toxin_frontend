@@ -1,0 +1,27 @@
+@import './palette';
+
+/**********************************************************************************************************************
+ *                                                      H T M L                                                       *
+ **********************************************************************************************************************/
+
+// font
+$Html-Font-Family: Montserrat, Arial, sans-serif;
+$Html-Font-Size: 16;
+$Html-Font-SizePx: 16px;
+
+// palette
+$Html-Background-Color: white;
+
+// padding
+$Html-Padding-x-Min: 20;
+$Html-Padding-x-MinPx: 20px;
+$Html-Padding-x-Max: 140;
+$Html-Padding-x-MaxPx: 140px;
+
+// width
+$Html-Width-Breakpoint: 768;
+$Html-Width-BreakpointPx: 768px;
+$Html-Width-Min: 340;
+$Html-Width-MinPx: 340px;
+$Html-Width-Max: 1440;
+$Html-Width-MaxPx: 1440px;

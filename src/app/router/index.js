@@ -1,6 +1,8 @@
 import { Router } from 'CLASSES/Router';
 import { ROUTER } from 'LIBS/consts';
 
+import { colorsAndTypes } from 'APP/router/ui-kit';
+
 const router = new Router({
   mode: ROUTER.modeHash,
   root: '/',
@@ -8,6 +10,7 @@ const router = new Router({
 });
 
 router
+  .add(colorsAndTypes.path, colorsAndTypes.callback)
   .add(/ui-kit\/form-elements$/, () => {
     console.log('ui-kit --- form-elements');
   })

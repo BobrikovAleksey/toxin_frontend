@@ -1,0 +1,45 @@
+@import '~STYLES/vars', '~STYLES/mixins';
+
+.types {
+  @include Flex-Column;
+
+  & &__item {
+    &:not(:first-of-type) {
+      margin-top: 52px;
+    };
+    &:last-of-type {
+      margin-top: 46px;
+    };
+  };
+};
+
+.type-card {
+  display: flex;
+
+  &__example {
+    width: 377px;
+    margin-left: 30px;
+  };
+
+  &__title {
+    width: 40px;
+    color: $Color-DarkShade25;
+    text-align: right;
+
+    &_h1 {
+      @include Text-Font(null, 1.5rem, 1.8125rem);
+    };
+
+    &_h2 {
+      @include Text-Font(null, 1.1875rem, 1.4375rem);
+    };
+
+    &_h3 {
+      @include Text-Font(null, 0.75rem, 0.9375rem);
+    };
+
+    &_body {
+      @include Text-Font(null, 0.875rem, 1.5rem);
+    };
+  };
+};

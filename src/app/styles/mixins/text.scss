@@ -1,0 +1,65 @@
+@import '~STYLES/vars';
+
+/**********************************************************************************************************************
+ *                                                      T E X T                                                       *
+ **********************************************************************************************************************/
+
+// ellipsis
+@mixin Text-Ellipsis($multiline: 0) {
+  overflow: hidden;
+  @if (not unitless($multiline)) {
+    @error 'Parameter must be an integer.';
+  } @else if ($multiline < 1) {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $multiline;
+  }
+};
+
+// font
+@mixin Text-Font($color: null, $size, $height: normal, $weight: 400, $transform: null, $style: null) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+  @if ($color != null) {
+    color: $color;
+  }
+  @if ($transform != null) {
+    text-transform: $transform;
+  }
+  @if ($style != null) {
+    font-style: $style;
+  }
+};
+
+@mixin Text() {
+  @include Text-Font($Color-DarkShade, 14px, 24px);
+};
+
+@mixin Text-H1() {
+  @include Text-Font($Color-DarkShade, 24px, 29.26px, 700);
+};
+
+@mixin Text-H2() {
+  @include Text-Font($Color-DarkShade, 19px, 23.16px, 700);
+};
+
+@mixin Text-H3() {
+  @include Text-Font($Color-DarkShade, 12px, 14.63px, 700, uppercase);
+};
+
+@mixin Text-Link() {
+  @include Text-Font($Color-DarkShade, 14px, 20px);
+  height: 20px;
+  cursor: pointer;
+  text-decoration: none;
+
+  &[disabled] {
+    color: $Color-DarkShade50;
+    cursor: default;
+    pointer-events: none;
+  };
+};

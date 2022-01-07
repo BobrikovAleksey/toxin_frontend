@@ -1,4 +1,5 @@
-import { isFunction, isObject, isRouter } from 'LIBS/conditions';
+import { isArray, isFunction, isNotEmptyString, isObject, isRouter } from 'LIBS/conditions';
+import { NAMES } from 'LIBS/consts';
 
 // Основной шаблон
 const template = `
@@ -26,10 +27,14 @@ class App {
    */
   #cache = {
     components: {},
-    elements: {},
+    elements: {
+      $main: null,
+    },
     router: null,
     tags: {},
-    views: {},
+    views: {
+      $current: null,
+    },
   };
 
   /**
@@ -40,8 +45,17 @@ class App {
    */
   constructor({ router = null, components = null, views = null } = {}) {
     this.$router = router;
-    this.#addComponentClasses(components);
     this.#addViewClasses(views);
+    this.#addComponentClasses(components);
+  };
+
+  /**
+   * Инициализирует приложение
+   */
+  init = () => {
+    const el = document.querySelector('#app');
+    el.insertAdjacentHTML('afterend', template);
+    el.parentNode.removeChild(el);
   };
 
   /********************************************************************************************************************
@@ -51,8 +65,8 @@ class App {
   get $main() {
     const { elements } = this.#cache;
 
-    if (!elements.main) elements.main = document.querySelector('main');
-    return elements.main;
+    if (!elements.$main) elements.$main = document.querySelector('main');
+    return elements.$main;
   };
 
   set $router(value) {
@@ -87,12 +101,58 @@ class App {
    ********************************************************************************************************************/
 
   /**
-   * Инициализирует приложение
+   * Кэширует представление
+   * @param view BaseView
    */
-  init = () => {
-    const el = document.querySelector('#app');
-    el.insertAdjacentHTML('afterend', template);
-    el.parentNode.removeChild(el);
+  cacheView = (view) => {
+    if (view.name === NAMES.anonymous) return;
+
+    this.#cache.views[view.name] = view;
+  };
+
+  /**
+   * Возвращает сформированный шаблон html-элемента
+   * @param component [ BaseView | BaseComponent ]
+   */
+  getTemplate = (component) => {
+    const { $app, props, template } = component;
+
+    const mainTemplate = template?.main ?? template;
+    if (!isNotEmptyString(mainTemplate)) return '';
+
+    const list = props?.list ?? [];
+    const itemListTemplate = template?.itemList ?? '';
+    const urlPattern = /{{\s*url\s*}}/g;
+    if (!isArray(list) || !isNotEmptyString(itemListTemplate)) return mainTemplate.replace(urlPattern, $app.url);
+
+    const listPattern = /{{\s*list\s*}}/g;
+    const listTemplate = itemListTemplate.repeat(list.length);
+    return template.replace(listPattern, listTemplate).replace(urlPattern, $app.url);
+  };
+
+  /**
+   * Отображает представление
+   * @param viewName string
+   * @param props object
+   */
+  renderView = (viewName, props = {}) => {
+    const Views = this.#classes.views;
+    const { $main, views } = this;
+
+    if (!$main) return;
+
+    views.$current?.hide();
+    if (!views[viewName]) {
+      const View = Views[viewName];
+      (new View({
+        app: this,
+        cache: views,
+        props,
+      })).init();
+    } else {
+      views[viewName].show();
+    }
+    views.$current = views[viewName] ?? null;
   };
 
   /********************************************************************************************************************

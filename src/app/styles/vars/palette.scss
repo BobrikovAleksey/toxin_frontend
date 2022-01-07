@@ -1,0 +1,26 @@
+/**********************************************************************************************************************
+ *                                                   P A L E T T E                                                    *
+ **********************************************************************************************************************/
+
+// dark shade
+$Color-DarkShade: #1F2041;
+$Color-DarkShade5: rgba($Color-DarkShade, 0.05);
+$Color-DarkShade10: rgba($Color-DarkShade, 0.10);
+$Color-DarkShade25: rgba($Color-DarkShade, 0.25);
+$Color-DarkShade50: rgba($Color-DarkShade, 0.50);
+$Color-DarkShade75: rgba($Color-DarkShade, 0.75);
+$Color-DarkShade100: $Color-DarkShade;
+
+// gray
+$Color-Gray: #E5E5E5;
+
+// green
+$Color-LightGreen: #66D2EA;
+$Color-Green: #6FCF97;
+$Color-GreenGradient: linear-gradient(180deg, $Color-Green 0%, $Color-LightGreen 100%);
+
+// purple
+$Color-LightPurple: #8BA4F9;
+$Color-Purple: #BC9CFF;
+$Color-PurpleGradient: linear-gradient(180deg, $Color-Purple 0%, $Color-LightPurple 100%);
+$Color-Purple15: rgba($Color-Purple, 0.15);

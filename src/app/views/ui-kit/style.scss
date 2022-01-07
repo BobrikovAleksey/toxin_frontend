@@ -1,0 +1,14 @@
+@import '~STYLES/vars', '~STYLES/mixins';
+
+body {
+  background: $Color-Gray;
+}
+
+.ui-kit {
+  @include Flex-JustifyContent(between);
+  min-height: 900px;
+  width: $Html-Width-MaxPx;
+  background: $Html-Background-Color;
+  margin: 0 auto;
+  padding: 145px 150px;
+};

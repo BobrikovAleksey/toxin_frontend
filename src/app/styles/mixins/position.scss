@@ -1,0 +1,82 @@
+@import '~STYLES/vars';
+
+/**********************************************************************************************************************
+ *                                                  A B S O L U T E                                                   *
+ **********************************************************************************************************************/
+
+@mixin Absolute-BottomLeft($bottom: 0, $left: 0) {
+  position: absolute;
+  bottom: $bottom;
+  left: $left;
+};
+
+@mixin Absolute-BottomRight($bottom: 0, $right: 0) {
+  position: absolute;
+  bottom: $bottom;
+  right: $right;
+};
+
+@mixin Absolute-TopLeft($top: 0, $left: 0) {
+  position: absolute;
+  left: $left;
+  top: $top;
+};
+
+@mixin Absolute-TopRight($top: 0, $right: 0) {
+  position: absolute;
+  right: $right;
+  top: $top;
+};
+
+/**********************************************************************************************************************
+ *                                                      F L E X                                                       *
+ **********************************************************************************************************************/
+
+@mixin _SelectAlignItems($vp: top) {
+  @if ($vp == top) {
+    align-items: flex-start;
+  } @else if ($vp == bottom) {
+    align-items: flex-end;
+  } @else if ($vp == center) {
+    align-items: center;
+  } @else {
+    @error 'Unknown vertical position #{$vp}.';
+  }
+};
+
+@mixin _SelectJustifyContent($hp: left) {
+  @if ($hp == left) {
+    justify-content: flex-start;
+  } @else if ($hp == right) {
+    justify-content: flex-end;
+  } @else if ($hp == center) {
+    justify-content: center;
+  } @else if ($hp == around) {
+    justify-content: space-around;
+  } @else if ($hp == between) {
+    justify-content: space-between;
+  } @else {
+    @error 'Unknown horizontal position #{ $hp }.';
+  }
+};
+
+@mixin Flex-AlignItems($vp: top) {
+  display: flex;
+  @include _SelectAlignItems($vp);
+};
+
+@mixin Flex-JustifyContent($hp: left) {
+  display: flex;
+  @include _SelectJustifyContent($hp);
+};
+
+@mixin Flex-JustifyContent-AlignItems($hp: left, $vp: top) {
+  display: flex;
+  @include _SelectAlignItems($vp);
+  @include _SelectJustifyContent($hp);
+};
+
+@mixin Flex-Column() {
+  display: flex;
+  flex-direction: column;
+};

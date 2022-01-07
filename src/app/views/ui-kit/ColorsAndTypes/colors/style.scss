@@ -1,0 +1,67 @@
+@import '~STYLES/vars', '~STYLES/mixins';
+
+$Example-Size: 70px;
+
+.colors {
+  @include Flex-Column;
+
+  & &__item {
+    &:not(:first-of-type) {
+      margin-top: 20px;
+    };
+  };
+};
+
+.color-card {
+  min-height: $Example-Size;
+  display: flex;
+
+  & &__code {
+    @include Text-Font(null, 1.1875rem, 1.75rem);
+  };
+
+  & &__description {
+    @include Flex-Column;
+    justify-content: center;
+    margin-left: 40px;
+  };
+
+  & &__example {
+    height: $Example-Size;
+    width: $Example-Size;
+    background-color: $Html-Background-Color;
+    border-radius: $Border-Radius-MdPx;
+
+    &_dark-shade {
+      background-color: $Color-DarkShade;
+    };
+
+    &_dark-shade-75 {
+      background-color: $Color-DarkShade75;
+    };
+
+    &_dark-shade-50 {
+      background-color: $Color-DarkShade75;
+    };
+
+    &_dark-shade-25 {
+      background-color: $Color-DarkShade25;
+    };
+
+    &_dark-shade-5 {
+      background-color: $Color-DarkShade5;
+    };
+
+    &_green {
+      background-color: $Color-Green;
+    };
+
+    &_purple {
+      background-color: $Color-Purple;
+    };
+  };
+
+  & &__title {
+    @include Text-Font(null, 1.1875rem, 1.75rem, 700);
+  };
+};
